@@ -1,0 +1,19 @@
+[user]
+  name   = Fullname
+  email  = your@mail.com
+[github]
+  user   = username
+[alias]
+  a      = add
+  ca     = commit -a
+  cam    = commit -am
+  cm     = commit -m
+  s      = status
+  pom    = push origin master
+  plum   = pull origin master
+  cob    = checkout -b
+  co     = checkout
+  fpa    = fetch --prune --all
+  l      = log --oneline --decorate --graph
+  la     = log --oneline --decorate --graph --all
+  ls     = log --oneline --decorate --graph --stat
