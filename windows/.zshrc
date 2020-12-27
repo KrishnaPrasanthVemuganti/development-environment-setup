@@ -2,7 +2,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-# Path to your oh-my-zsh installation.
+# Path to your oh-my-zsh installation. update with your username
 export ZSH="/home/[username]/.oh-my-zsh"
 
 # This loads nvm
@@ -22,6 +22,8 @@ source $ZSH/oh-my-zsh.sh
 
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # User configuration
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -37,7 +39,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 # For a full list of active aliases, run `alias`.
 alias lsl="ls -lrt"
-alias zshconfig="code .zshrc &"
+alias zshconfig="code .zshrc"
 alias zshreset="source ~/.zshrc"
 
 # POWERLEVEL9K Config
@@ -79,8 +81,6 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='clear'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='magenta'
 POWERLEVEL9K_BACKGROUND_JOBS_BACKGROUND='clear'
 POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND='green'
-
-neofetch
 
 # User functions
 function acp() {
