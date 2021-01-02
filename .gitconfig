@@ -1,8 +1,8 @@
 [user]
-  name   = Fullname
-  email  = your@mail.com
+  name   = [Fullname]
+  email  = [your@mail.com]
 [github]
-  user   = username
+  user   = [username]
 [alias]
   a      = add
   ca     = commit -a
