@@ -9,6 +9,7 @@
         {
             // Put settings here that you want to apply to all profiles.
             "fontSize": 10,
+            "fontFace": "MesloLGS NF",
         },
         "list":
         [
@@ -38,16 +39,15 @@
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl",
-                "fontFace": "HaskLug Nerd Font",
+                "source": "Windows.Terminal.Wsl",                
                 "startingDirectory": "//wsl$/Ubuntu/home/ubuntu/",
                 "colorScheme": "One Half Dark",
                 "closeOnExit" : true,
                 "historySize" : 9001,
                 "useAcrylic" : true,
-                "acrylicOpacity" : 0.5,
+                "acrylicOpacity" : 0.7,
                 "backgroundImage" : "C:/Users/krish/OneDrive/Pictures/Wallpapers/windows1.jpg",
-                "backgroundImageOpacity" : 0.2,
+                "backgroundImageOpacity" : 0.5,
                 "backgroundImageStretchMode" : "fill"
             }
         ]
