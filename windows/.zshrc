@@ -1,4 +1,4 @@
-# Note: Make sure to change [username] to your username #
+# Note: Make sure to change [username] to your username
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
