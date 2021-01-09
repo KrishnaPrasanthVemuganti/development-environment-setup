@@ -7,9 +7,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="/usr/local/sbin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/[username]/.oh-my-zsh"
@@ -21,7 +19,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_DISABLE_COMPFIX="true"
 
 # Which plugins would you like to load?
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git
+         node
+         npm
+         npx
+         zsh-autosuggestions
+         zsh-syntax-highlighting
+         z)
 
 source $ZSH/oh-my-zsh.sh
 
