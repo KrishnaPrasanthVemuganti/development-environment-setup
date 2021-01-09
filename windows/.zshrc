@@ -36,10 +36,6 @@ source $ZSH/oh-my-zsh.sh
 export PATH=/home/[username]/.fnm:$PATH
 eval "`fnm env`"
 
-# Add SSH Key
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_ed25519
-
 # Aliases
 # For a full list of active aliases, run `alias`.
 alias lsl="ls -lrt"
