@@ -9,6 +9,7 @@ DisplayErrorAndExit () {
 InstallDotNetCorePrerequisites () {
 	wget https://packages.microsoft.com/config/ubuntu/20.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 	sudo dpkg -i packages-microsoft-prod.deb
+	rm packages-microsoft-prod.deb
 	sudo apt-get update
 	sudo apt-get install -y apt-transport-https
 	sudo apt-get update
@@ -90,11 +91,14 @@ then
 	# Install Gatsby
 	sudo apt install build-essential libvips-dev libpng-dev
 	npm install -g gatsby-cli node-gyp
-if
+fi
 
 # Install dotnetcore sdk/runtime 
 PS3='Please select which dotnet version you want to install:'
-options=("ASPNETCORE Runtime 5.0" ".Net Runtime 5.0" ".Net SDK 5.0" "Anything else continue without installing")
+options=("ASPNETCORE Runtime 5.0" 
+		".Net Runtime 5.0" 
+		".Net SDK 5.0" 
+		"Anything else continue without installing")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -110,7 +114,7 @@ do
             ;;
 	    ".Net SDK 5.0")
 			InstallDotNetCorePrerequisites
-			sudo apt-get install -y dotnet-runtime-5.0
+			sudo apt-get install -y dotnet-sdk-5.0
 	        break
 	        ;;
         *) break
