@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DisplayErrorAndExit () {
-	echo "\n usage:\n\n ./initialSetup.sh \"Full Name\" youremail@email.com\n"
-	exit 1;
+	echo "usage: ./initialSetup.sh \"Full Name\" youremail@email.com"
+	exit 1
 }
 
 # Install DotNet Core Prerequisites
@@ -14,8 +14,8 @@ InstallDotNetCorePrerequisites () {
 	sudo apt-get update
 }
 
-[[ -z "$1" ]] && { echo "Parameter 1 FullName is empty!" ; DisplayErrorAndExit }
-[[ -z "$2" ]] && { echo "Parameter 2 Email is empty! " ; DisplayErrorAndExit }
+[[ -z "$1" ]] && { echo "Parameter 2 FullName is empty!"; DisplayErrorAndExit; }
+[[ -z "$2" ]] && { echo "Parameter 3 Email is empty!"; DisplayErrorAndExit; }
 
 # Update and Upgrade
 echo "Updating and upgrading packages"
@@ -27,7 +27,7 @@ sudo add-apt-repository ppa:git-core/ppa && sudo apt update && sudo apt install 
 
 echo "Setting GIT config options"
 # Set Git User Name and Email
-git config --global user.name $1
+git config --global user.name "$1"
 git config --global user.email $2
 
 #avoid git status showing all your files as modified because of the automatic EOL conversion done
@@ -57,20 +57,24 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 
 echo -n "Enter a which python version you want to install(3/2/(n)one):"
 read python
+
 if [ $python == "3" ]
 then
-	# Python 3
-	sudo apt update && sudo apt install python3 python3-pip
+	sudo apt update
+	sudo apt install python3 python3-pip
 	sudo ln -s /usr/bin/python3 /usr/bin/python
 elif [ $python == "2" ]
-	# Python 2.7
-	sudo apt update && sudo apt install python2.7
+then
+	sudo apt update
+	sudo apt install python2.7
 	sudo ln -s /usr/bin/python2.7 /usr/bin/python
-if
+fi
 
 # fnm and node
 sudo apt install unzip
 curl -fsSL https://fnm.vercel.app/install | bash
+export PATH=/home/ubuntu/.fnm:$PATH
+eval "`fnm env`"
 fnm --version
 fnm ls-remote
 echo -e "Please enter node version u want to install:"
