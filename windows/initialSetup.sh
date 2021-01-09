@@ -11,7 +11,7 @@ InstallDotNetCorePrerequisites () {
 	sudo dpkg -i packages-microsoft-prod.deb
 	sudo apt-get update; \
 	sudo apt-get install -y apt-transport-https && \
-	sudo apt-get update && \
+	sudo apt-get update
 }
 
 [[ -z "$1" ]] && { echo "Parameter 1 FullName is empty!" ; DisplayErrorAndExit }
